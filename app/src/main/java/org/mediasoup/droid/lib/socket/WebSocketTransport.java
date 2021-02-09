@@ -2,6 +2,7 @@ package org.mediasoup.droid.lib.socket;
 
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.util.Log;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -238,6 +239,7 @@ public class WebSocketTransport extends AbsWebSocketTransport {
       if (mClosed) {
         return;
       }
+      Log.e("error", "onMessage() text = " + text);
       Message message = Message.parse(text);
       if (message == null) {
         return;

@@ -1,1 +1,2 @@
 include ':app'
+rootProject.name = "mediasoup-demo-android-my"

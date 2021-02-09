@@ -7,6 +7,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.WorkerThread;
@@ -1048,6 +1049,7 @@ public class RoomClient extends RoomMessageHandler {
       String appData = data.optString("appData");
       boolean producerPaused = data.optBoolean("producerPaused");
 
+      Log.e("error", " id = " + id + ",producerId = " + producerId);
       Consumer consumer =
           mRecvTransport.consume(
               c -> {
