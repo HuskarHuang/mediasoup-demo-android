@@ -295,7 +295,8 @@ public class WebSocketTransport extends AbsWebSocketTransport {
           new OkHttpClient.Builder()
               .addInterceptor(httpLoggingInterceptor)
               .retryOnConnectionFailure(true);
-      builder.sslSocketFactory(sslSocketFactory, (X509TrustManager) trustAllCerts[0]);
+//      builder.sslSocketFactory(sslSocketFactory, (X509TrustManager) trustAllCerts[0]);
+      builder.sslSocketFactory(SSLSocketClient.getSSLSocketFactory(), (X509TrustManager)SSLSocketClient.getTrustManager()[0]);
 
       builder.hostnameVerifier((hostname, session) -> true);
 
